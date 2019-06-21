@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section>
+  <div class="container">
+    <div class="jumbotron">
+        <h1 class="mt-5">Let's do ML</h1>
+        <p></p>
+        <h1>Upload an Image</h1>
+         <!--<form method='post' enctype='multipart/form-data' action='/uploadml'>
+           <p><input type='file' name='file'>
+              <input type='submit' value='Upload'>
+         </form>-->
+         <form id='upload-image' method='post' enctype='multiple/form-data'>
+           <input type='file' name='file' id='imgshow'>
+           <input type='button' value='Submit Image' id='pressme'  />
+         </form>
+
+         <div class="container">
+          <div class="row">
+            <div class="col" id='imgup'>
+              <img id='myimg1' alt='my uploaded image' width='400' height='400' />
+            </div>
+          </div>
+         <table class="table" id='imgresult'>
+           <tbody id="mlresults">
+
+           </tbody>
+         </table>
+       </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

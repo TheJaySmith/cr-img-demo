@@ -1,0 +1,14 @@
+Flask==1.0.2
+google-cloud==0.34.0
+google-cloud-vision==0.36.0
+google-auth==1.6.3
+google-cloud-storage==1.15.0
+google-api-python-client==1.7.8
+gunicorn==19.9.0
+requests==2.21.0
+PyJWT==1.7.1
+Flask-JWT-Extended==3.18.0
+cryptography==2.6.1
+Flask-Cors==3.0.7
+Flask-SSLify==0.1.5
+Flask-Caching==1.7.1
