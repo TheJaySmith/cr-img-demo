@@ -3,8 +3,8 @@
 ## First let's declare some variable
 
 ```
-export PROJECT='<your project>'
-export IMAGE='<your image name>'
+export _PROJECT_='<your project>'
+export _IMAGE_='<your image name>'
 ```
 
 ## Let's enable APIs for Cloud Run and Container Registry and Cloud Build
