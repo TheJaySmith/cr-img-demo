@@ -43,9 +43,6 @@ def mlvision(file, filename):
     images = {}
     vision_client = vision.ImageAnnotatorClient()
 
-
-    #with io.open(filename, 'rb') as image_file:
-        #content = image_file.read()
     content = file.read()
 
     image = types.Image(content=content)

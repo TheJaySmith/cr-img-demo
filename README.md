@@ -20,12 +20,13 @@ gcloud components install docker-credential-gcr
 ```
 
 
-## We will also need to setup some environment variable. PROJECT_ID will be the project you set above. THE _IMAGE_ variable will be the name of the Docker image you create. You can use anything for image name.
+## We will also need to setup some environment variable. PROJECT_ID will be the project you set above. THE _IMAGE_ variable will be the name of the Docker image you create. You can use anything for image name. _SERVICE_ will be the name of the service you launch. This too can be anything you want. 
 
 ```
 export PROJECT_ID='<your project>'
 export PROJ_NUMBER=$(gcloud projects list --filter="$PROJECT_ID" --format="value(PROJECT_NUMBER)")
 export _IMAGE_='<your image name>'
+export _SERVICE_='<your service name>'
 
 
 ```
@@ -46,6 +47,10 @@ gcloud projects add-iam-policy-binding $PROJECT_ID \
 gcloud projects add-iam-policy-binding $PROJECT_ID \
 --member serviceAccount:$PROJ_NUMBER@cloudbuild.gserviceaccount.com \
 --role roles/run.admin
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+--member serviceAccount:$PROJ_NUMBER@cloudbuild.gserviceaccount.com \
+--role roles/iam.serviceAccountUser
 
 gcloud iam service-accounts add-iam-policy-binding \
       $PROJ_NUMBER@cloudbuild.gserviceaccount.com \
@@ -70,7 +75,7 @@ Take a look at cloudbuild.yaml. Each step of the build process is shown here. St
 
 ```
 
-gcloud builds submit --config cloudbuild.yaml . --substitutions=_IMAGE_="$_IMAGE_"
+gcloud builds submit --config cloudbuild.yaml . --substitutions=_IMAGE_="$_IMAGE_",_SERVICE_="$_SERVICE_"
 ```
 
 In The Cloud Console, go to Cloud Run and choose your new application. Click the URL . 
