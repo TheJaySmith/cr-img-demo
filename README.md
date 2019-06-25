@@ -27,6 +27,7 @@ export PROJECT_ID='<your project>'
 export PROJ_NUMBER=$(gcloud projects list --filter="$PROJECT_ID" --format="value(PROJECT_NUMBER)")
 export _IMAGE_='<your image name>'
 
+
 ```
 
 ## Let's enable APIs for Cloud Run and Container Registry and Cloud Build
@@ -69,7 +70,9 @@ Take a look at cloudbuild.yaml. Each step of the build process is shown here. St
 
 
 ```
+
 gcloud builds submit --config cloudbuild.yaml . --substitutions=_IMAGE_="$_IMAGE_"
 ```
 
 In The Cloud Console, go to Cloud Run and choose your new application. Click the URL . 
+
