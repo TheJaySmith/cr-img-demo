@@ -30,10 +30,10 @@ export _IMAGE_='<your image name>'
 
 ```
 
-## Let's enable APIs for Cloud Run and Container Registry and Cloud Build
+## Let's enable APIs for Container Engine, Cloud Run, Container Registry, Cloud Build and Vision API
 
 ```
-gcloud services enable container.googleapis.com containerregistry.googleapis.com cloudbuild.googleapis.com run.googleapis.com
+gcloud services enable container.googleapis.com containerregistry.googleapis.com cloudbuild.googleapis.com run.googleapis.com cloudapis.googleapis.com
 ```
 
 ## Let's give Cloud Build access to Cloud Run 
