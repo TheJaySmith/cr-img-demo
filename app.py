@@ -8,6 +8,7 @@ from flask_cors import CORS
 from werkzeug.utils import secure_filename
 from requests.auth import HTTPBasicAuth
 from google.oauth2 import service_account
+from google.cloud import storage
 from google.cloud import vision
 from google.cloud.vision import types
 
@@ -32,7 +33,7 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 app = Flask(__name__)
 sslify = SSLify(app)
 cache = Cache(app, config={'CACHE_TYPE': 'simple'})
-
+CORS(app)
 
 def allowed_file(filename):
     return '.' in file and \
