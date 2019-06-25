@@ -24,7 +24,7 @@ gcloud components install docker-credential-gcr
 
 ## The _IMAGE_ variable will be the name of the Docker image you create. You can use anything for image name. 
 
-##_SERVICE_ will be the name of the service you launch. This too can be anything you want. 
+## _SERVICE_ will be the name of the service you launch. This too can be anything you want. 
 
 ```
 export PROJECT_ID='<your project>'
